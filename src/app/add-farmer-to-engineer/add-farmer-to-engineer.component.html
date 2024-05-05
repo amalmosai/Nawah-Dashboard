@@ -1,0 +1,23 @@
+
+<div>
+  <form [formGroup]="MyForm" (ngSubmit)="submitForm()" novalidate>
+    <input type="submit" value="Add Farmer" class="btn">
+    <div *ngFor="let data of Farmer; let i=index" class="card">
+      <label style="font-size: 25px;">
+        <input type="checkbox" [value]="data._id" (change)="onCheckboxChange($event)" style="width:100px;"/>
+        <ion-avatar slot="start"  class="avatar">
+          <img src="http://localhost:3001/uploads/{{data.img}}" style="width: 70px; border-radius: 100%; margin: 8px 5px;">
+        </ion-avatar>
+        {{ data.fname + ' ' + data.lname }}
+      </label>
+    </div>
+
+    <p class="error" *ngIf="this.MyForm.controls['checkArray'].errors?.['required']">
+      Checkbox is required, select at least one value.
+    </p>
+
+  </form>
+</div>
+
+
+

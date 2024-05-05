@@ -1,0 +1,107 @@
+
+
+<!-- BEGIN: Head -->
+
+
+<!-- END: Head -->
+<div class="flex">
+  <!-- BEGIN: Side Menu -->
+  <nav class="side-nav">
+      <a href="" class="intro-x flex items-center pl-5 pt-4">
+          <img alt="Midone - HTML Admin Template" style="width: 60px; height: 60px;"
+              src="../../assets/imgs/logo.png">
+          <span class="hidden xl:block text-white text-lg ml-3 mt-4">
+              Nawah
+          </span>
+      </a>
+      <div class="side-nav__devider my-6">
+
+      </div>
+      <ul>
+          <li>
+              <a routerLink="/home" class="side-menu" [routerLinkActive]="['side-menu--active']">
+                  <div class="side-menu__icon">
+                    <i class="fa-solid fa-house-user fa-2xl"></i>
+                  </div>
+                  <div class="side-menu__title">
+                      Dashboard
+                      <div class="side-menu__sub-icon transform rotate-180">
+                          <i data-lucide="chevron-down"></i>
+                      </div>
+                  </div>
+              </a>
+          </li>
+
+          <li>
+              <a  routerLink="/products" class="side-menu" [routerLinkActive]="['side-menu--active']">
+                  <div class="side-menu__icon">
+                    <i class="fa-brands fa-shopify fa-2xl"></i>
+                  </div>
+                  <div class="side-menu__title">
+                      Products
+                      <div class="side-menu__sub-icon ">
+                          <i data-lucide="chevron-down"></i>
+                      </div>
+                  </div>
+              </a>
+
+          </li>
+
+          <li>
+              <a routerLink="/users" class="side-menu" [routerLinkActive]="['side-menu--active']">
+                  <div class="side-menu__icon">
+                    <i class="fa-solid fa-user-tie fa-2xl"></i>
+                  </div>
+                  <div class="side-menu__title">
+                      Users
+                  </div>
+              </a>
+          </li>
+
+
+          <li>
+              <a routerLink="/farmar" class="side-menu" [routerLinkActive]="['side-menu--active']">
+                  <div class="side-menu__icon">
+                    <i class="fa-solid fa-tractor fa-2xl"></i>
+                  </div>
+                  <div class="side-menu__title">
+                      Farmar
+                  </div>
+              </a>
+          </li>
+
+          <li>
+              <a routerLink="/engineer" class="side-menu" [routerLinkActive]="['side-menu--active']">
+                  <div class="side-menu__icon">
+                    <i class="fa-solid fa-user-gear fa-2xl"></i>
+                  </div>
+                  <div class="side-menu__title">
+                    Engineer
+                  </div>
+              </a>
+          </li>
+
+          <li>
+            <a routerLink="/message" class="side-menu" [routerLinkActive]="['side-menu--active']">
+                <div class="side-menu__icon">
+                  <i class="fa-solid fa-message fa-2xl"></i>
+                </div>
+                <div class="side-menu__title">
+                  Messages
+                </div>
+            </a>
+        </li>
+
+          <li>
+              <a  class="side-menu" [routerLinkActive]="['side-menu--active']" (click)="logout()">
+                  <div class="side-menu__icon">
+                    <i class="fa-solid fa-arrow-right-from-bracket fa-2xl" ></i>
+                  </div>
+                  <div class="side-menu__title">
+                      Logout
+                  </div>
+              </a>
+          </li>
+      </ul>
+  </nav>
+</div>

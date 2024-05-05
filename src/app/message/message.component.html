@@ -1,0 +1,63 @@
+<div class="grid grid-cols-12 gap-6 mt-5 ">
+
+  <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
+    <div class="dropdown">
+      <div class="dropdown-menu w-40">
+        <ul class="dropdown-content">
+          <li>
+            <a href="" class="dropdown-item">
+              <i data-lucide="printer" class="w-4 h-4 mr-2"></i> Print
+            </a>
+          </li>
+          <li>
+            <a href="" class="dropdown-item">
+              <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Export to Excel
+            </a>
+          </li>
+          <li>
+            <a href="" class="dropdown-item">
+              <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Export to PDF
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="hidden md:block mx-auto text-slate-500">Showing 1 to 5 of 150 entries</div>
+  </div>
+
+  <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+    <table class="table table-report -mt-2">
+      <thead>
+        <tr style="text-align: center;">
+          <th class="whitespace-nowrap">MESSAGES</th>
+          <th class="whitespace-nowrap">EMAIL</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="intro-x"*ngFor="let item of POSTS   | paginate: { itemsPerPage: 5, currentPage: page }">
+
+          <td style="text-align: center;" >
+            <a href="" class="font-medium whitespace-nowrap">{{item.contactMessage}}</a>
+          </td>
+          <td style="text-align: center;" >
+            <a href="" class="font-medium whitespace-nowrap">{{item.email}}</a>
+          </td>
+
+        </tr>
+
+
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+
+</div>
+

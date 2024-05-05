@@ -1,0 +1,139 @@
+<html lang="en" class="{{color}} {{theme}}">
+<div class="end">
+  <app-nav-bar></app-nav-bar>
+
+  <div class="content">
+    <div class="top-bar">
+      <nav aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Application</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+      </nav>
+      <div class="intro-x relative mr-3 sm:mr-6">
+        <div class="search hidden sm:block">
+
+          <input type="text" class="search__input form-control border-transparent" placeholder="Search...">
+
+        </div>
+        <a class="notification sm:hidden" href="">
+          <i data-lucide="search" class="notification__icon dark:text-slate-500"></i>
+        </a>
+
+      </div>
+      <div class="intro-x dropdown mr-auto sm:mr-6">
+        <!-- amal comment this -->
+        <!-- //////////////////notification///////////////////////// -->
+        <!-- <div class="dropdown-toggle notification notification--bullet cursor-pointer" role="button"
+          aria-expanded="false" data-tw-toggle="dropdown">
+          <i class="fa-solid fa-bell fa-shake fa-xl"></i>
+        </div> -->
+        <!--////////////////////////////// admin name///////////////////////////// -->
+        <h1>{{ fname + ' ' + lname }}</h1>
+        <!-- amal comment this -->
+
+        <div class="notification-content pt-2 dropdown-menu">
+          <div class="notification-content__box dropdown-content">
+            <div class="notification-content__title">Notifications</div>
+          </div>
+        </div>
+
+      </div>
+      <!-- ////////////////////////////image//////////////////////////////// -->
+      <div class="intro-x dropdown w-8 h-8">
+        <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button"
+          aria-expanded="false" data-tw-toggle="dropdown">
+          <img alt="Midone - HTML Admin Template" src="http://localhost:3001/uploads/{{img}}">
+        </div>
+        <div class="dropdown-menu w-56">
+          <ul class="dropdown-content bg-primary text-white">
+            <li class="p-2">
+              <div class="font-medium">Nicolas Cage</div>
+              <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Software Engineer</div>
+            </li>
+            <li>
+              <hr class="dropdown-divider border-white/[0.08]">
+            </li>
+            <li>
+              <a href="" class="dropdown-item hover:bg-white/5">
+                <i data-lucide="user" class="w-4 h-4 mr-2"></i> Profile
+              </a>
+            </li>
+            <li>
+              <a href="" class="dropdown-item hover:bg-white/5">
+                <i data-lucide="edit" class="w-4 h-4 mr-2"></i> Add Account
+              </a>
+            </li>
+            <li>
+              <a href="" class="dropdown-item hover:bg-white/5">
+                <i data-lucide="lock" class="w-4 h-4 mr-2"></i> Reset Password
+              </a>
+            </li>
+            <li>
+              <a href="" class="dropdown-item hover:bg-white/5">
+                <i data-lucide="help-circle" class="w-4 h-4 mr-2"></i> Help
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider border-white/[0.08]">
+            </li>
+            <li>
+              <a class="dropdown-item hover:bg-white/5">
+                <i data-lucide="toggle-right" class="w-4 h-4 mr-2"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+
+
+    <div id="delete-confirmation-modal" class="modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <div class="p-5 text-center">
+              <i data-lucide="x-circle" class="w-16 h-16 text-danger mx-auto mt-3"></i>
+              <div class="text-3xl mt-5">Are you sure?</div>
+              <div class="text-slate-500 mt-2">Do you really want to delete these records? <br>This
+                process cannot be undone.</div>
+            </div>
+            <div class="px-5 pb-8 text-center">
+              <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+              <button type="button" class="btn btn-danger w-24">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BEGIN: Main Color Switcher-->
+
+  <!-- <div data-url="http://rubick.left4code.com/page/side-menu/light/product-grid"
+    class="dark-mode-switcher cursor-pointer shadow-md fixed bottom-0 right-0 box border rounded-full w-40 h-12 flex items-center justify-center z-50 mb-10 mr-10">
+    <div class="mr-4 text-slate-600 dark:text-slate-200">Dark Mode</div>
+    <div class="dark-mode-switcher__toggle dark-mode-switcher__toggle--active border" (click)="night('dark')"></div>
+  </div> -->
+
+  <div
+    class="shadow-md fixed bottom-0 right-0 box border rounded-full h-12 px-5 flex items-center justify-center z-50 mb-10 mr-52">
+    <div class="mr-4 hidden sm:block text-slate-600 dark:text-slate-200">Color Scheme</div>
+    <button (click)="change('')"
+      class="block w-8 h-8 cursor-pointer bg-blue-800 rounded-full border-4 mr-1 hover:border-slate-200 border-white dark:border-darkmode-600"></button>
+    <button (click)="change('theme-1')"
+      class="block w-8 h-8 cursor-pointer bg-emerald-900 rounded-full border-4 mr-1 hover:border-slate-200 border-white dark:border-darkmode-800/80"></button>
+    <button (click)="change('theme-2')"
+      class="block w-8 h-8 cursor-pointer bg-blue-900 rounded-full border-4 mr-1 hover:border-slate-200 border-white dark:border-darkmode-600"></button>
+    <button (click)="change('theme-3')"
+      class="block w-8 h-8 cursor-pointer bg-cyan-900 rounded-full border-4 mr-1 hover:border-slate-200 border-white dark:border-darkmode-600"></button>
+    <button (click)="change('theme-4')"
+      class="block w-8 h-8 cursor-pointer bg-indigo-900 rounded-full border-4 hover:border-slate-200 border-white dark:border-darkmode-600"></button>
+  </div>
+  <!-- END: Main Color Switcher -->
+
+</div>
+<!-- <router-outlet></router-outlet> -->
+
+</html>

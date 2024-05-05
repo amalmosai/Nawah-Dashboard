@@ -1,0 +1,102 @@
+<div class="grid grid-cols-12 gap-6">
+  <div class="col-span-12 2xl:col-span-9">
+    <div class="grid grid-cols-12 gap-6">
+      <!-- BEGIN: General Report -->
+      <div class="col-span-12 mt-8">
+        <div class="intro-y xx flex items-center h-10">
+          <h2 class="text-lg font-medium truncate mr-5">General Report</h2>
+          <a href="" class="ml-auto flex items-center text-primary">
+            <i class="fa-solid fa-repeat fa-sm mr-2"></i> Reload Data
+          </a>
+        </div>
+        <div class="grid grid-cols-12 gap-6 mt-5">
+          <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+            <div class="report-box zoom-in">
+              <div class="box p-5">
+                <div class="flex">
+                  <i class="fa-solid fa-user-gear fa-fade" style="color: #8bf72c; font-size: 35px;"></i>
+                  <div class="ml-auto">
+                    <div class="report-box__indicator bg-success cursor-pointer" title="33% Higher than last month">
+                      <p>33%</p>
+                      <i class="fa-solid fa-angles-up fa-bounce fa-lg"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-3xl font-medium leading-8 mt-6">{{count[3]}}</div>
+                <div class="text-base text-slate-500 mt-1">Engineers</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+            <div class="report-box zoom-in">
+              <div class="box p-5">
+                <div class="flex">
+                  <i class="fa-solid fa-tractor fa-fade" style="color: #8bf72c;  font-size: 35px;"></i>
+                  <div class="ml-auto">
+                    <div class="report-box__indicator bg-success cursor-pointer" title="2% Lower than last month">
+                      <p>33%</p>
+                      <i class="fa-solid fa-angles-down fa-bounce fa-lg"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-3xl font-medium leading-8 mt-6">{{count[2]}}</div>
+                <div class="text-base text-slate-500 mt-1">Farmers</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+            <div class="report-box zoom-in">
+              <div class="box p-5">
+                <div class="flex">
+                  <i class="fa-brands fa-shopify fa-fade" style="color: #8bf72c;  font-size: 35px;"></i>
+                  <div class="ml-auto">
+                    <div class="report-box__indicator bg-success cursor-pointer" title="12% Higher than last month">
+                      <p>33%</p>
+                      <i class="fa-solid fa-angles-up fa-bounce fa-lg"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-3xl font-medium leading-8 mt-6">{{count[0]}}</div>
+                <div class="text-base text-slate-500 mt-1">Total Products</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+            <div class="report-box zoom-in">
+              <div class="box p-5">
+                <div class="flex">
+                  <i class="fa-regular fa-user fa-fade" style="color: #8bf72c;  font-size: 35px;"></i>
+                  <div class="ml-auto">
+                    <div class="report-box__indicator bg-success cursor-pointer" title="22% Higher than last month">
+                      <p>33%</p>
+                      <i class="fa-solid fa-angles-up fa-bounce fa-xl"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-3xl font-medium leading-8 mt-6">{{count[1]}}</div>
+                <div class="text-base text-slate-500 mt-1">Users</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END: General Report -->
+
+
+    </div>
+  </div>
+  <!-- END: Content -->
+</div>
+
+<div class="intro-y box p-5 mt-5">
+    <div>
+      <app-bar-chart></app-bar-chart>
+    </div>
+
+    <div class="w-52 sm:w-auto mx-auto mt-20" style="height: 400px;">
+      <div class="row">
+        <app-chart class="col-6"></app-chart>
+        <app-pie-chart class="col-6"></app-pie-chart>
+      </div>
+    </div>
+</div>

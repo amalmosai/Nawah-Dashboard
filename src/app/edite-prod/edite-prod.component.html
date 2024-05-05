@@ -1,0 +1,113 @@
+<div class="container">
+  <form class="row g-3" [formGroup]="MyForm" (ngSubmit)="send()">
+
+    <!-- name -->
+      <div class="col-12">
+        <label for="validationCustom01" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="validationCustom01" formControlName="name" [ngClass]="{
+              'is-valid': MyForm.controls['name'].valid && MyForm.controls['name'].touched,
+              'is-invalid': MyForm.controls['name'].invalid && MyForm.controls['name'].touched,
+          }" />
+        <div class="invalid-feedback" *ngIf="MyForm.controls['name'].invalid && MyForm.controls['name'].touched">
+          <span *ngIf="MyForm.controls['name'].hasError('required')">Please provide a enter User name.</span>
+        </div>
+        <div class="valid-feedback" *ngIf="MyForm.controls['name'].valid">
+          Looks good!
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">Description</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="description" [ngClass]="{
+              'is-valid': MyForm.controls['description'].valid && MyForm.controls['description'].touched,
+              'is-invalid': MyForm.controls['description'].invalid && MyForm.controls['description'].touched,
+          }" />
+        <div class="valid-feedback" *ngIf="MyForm.controls['description'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="
+          MyForm.controls['description'].invalid &&
+          MyForm.controls['description'].touched
+          ">
+          <span *ngIf="MyForm.controls['description'].hasError('required')">Please provide a enter Phone Number.</span>
+        </div>
+      </div>
+
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">category</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="category" [ngClass]="{
+              'is-valid': MyForm.controls['category'].valid && MyForm.controls['category'].touched,
+              'is-invalid': MyForm.controls['category'].invalid && MyForm.controls['category'].touched,
+          }" />
+        <div class="valid-feedback" *ngIf="MyForm.controls['category'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="
+          MyForm.controls['category'].invalid &&
+          MyForm.controls['category'].touched
+          ">
+          <span *ngIf="MyForm.controls['category'].hasError('required')">Please provide a enter Phone Number.</span>
+        </div>
+      </div>
+
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">status</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="status" [ngClass]="{
+              'is-valid': MyForm.controls['status'].valid && MyForm.controls['status'].touched,
+              'is-invalid': MyForm.controls['status'].invalid && MyForm.controls['status'].touched,
+          }" />
+        <div class="valid-feedback" *ngIf="MyForm.controls['status'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="
+          MyForm.controls['status'].invalid &&
+          MyForm.controls['status'].touched
+          ">
+          <span *ngIf="MyForm.controls['status'].hasError('required')">Please provide a enter Phone Number.</span>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">Quantity</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="quantity" [ngClass]="{
+              'is-valid': MyForm.controls['quantity'].valid && MyForm.controls['quantity'].touched,
+              'is-invalid': MyForm.controls['quantity'].invalid && MyForm.controls['quantity'].touched,
+          }" />
+        <div class="valid-feedback" *ngIf="MyForm.controls['quantity'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="
+          MyForm.controls['quantity'].invalid && MyForm.controls['quantity'].touched
+          ">
+          <span *ngIf="MyForm.controls['quantity'].hasError('required')">Please provide a enter Quantity.</span>
+        </div>
+      </div>
+
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">Price</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="price" [ngClass]="{
+              'is-valid': MyForm.controls['price'].valid && MyForm.controls['price'].touched,
+              'is-invalid': MyForm.controls['price'].invalid && MyForm.controls['price'].touched,
+          }" />
+        <div class="valid-feedback" *ngIf="MyForm.controls['price'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="MyForm.controls['price'].invalid && MyForm.controls['price'].touched">
+          <span *ngIf="MyForm.controls['price'].hasError('required')">Please provide a enter Price.</span>
+        </div>
+      </div>
+
+      <div>
+        <label for="validationCustom02" class="form-label">Upload product Image</label>
+        <input class="form-control" type="file"  #imageUrl (change)="upload(imageUrl.files)">
+      </div>
+
+      <div>
+        <button class="btn btn-primary" type="submit" [disabled]="">Edit</button>
+      </div>
+
+  </form>
+</div>

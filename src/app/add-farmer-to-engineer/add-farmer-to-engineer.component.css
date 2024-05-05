@@ -1,0 +1,22 @@
+.card{
+  width:80%;
+  height: 10%;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.avatar{
+  width: 50px;
+}
+.btn{
+  border: none;
+  background-color: rgb(107, 186, 38);
+  color:white;
+  text-align: center;
+  margin: 10px auto;
+}
+.error{
+  color: red;
+  margin: 0 auto;
+  width: 30%;
+}

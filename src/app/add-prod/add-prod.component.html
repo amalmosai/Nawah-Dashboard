@@ -1,0 +1,94 @@
+<div class="container">
+  <form class="row g-3" [formGroup]="Form" (ngSubmit)="send()">
+
+    <!-- name -->
+      <div class="col-12">
+        <label for="validationCustom01" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="validationCustom01" formControlName="name"/>
+        <div class="invalid-feedback" *ngIf="Form.controls['name'].invalid && Form.controls['name'].touched">
+          <span *ngIf="Form.controls['name'].hasError('required')">Please provide a enter User name.</span>
+        </div>
+        <div class="valid-feedback" *ngIf="Form.controls['name'].valid">
+          Looks good!
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">Description</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="description"/>
+        <div class="valid-feedback" *ngIf="Form.controls['description'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="
+          Form.controls['description'].invalid &&
+          Form.controls['description'].touched
+          ">
+          <span *ngIf="Form.controls['description'].hasError('required')">Please provide a enter Phone Number.</span>
+        </div>
+      </div>
+
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">Category</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="category"/>
+        <div class="valid-feedback" *ngIf="Form.controls['category'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="
+          Form.controls['category'].invalid &&
+          Form.controls['category'].touched
+          ">
+          <span *ngIf="Form.controls['category'].hasError('required')">Please provide a enter Phone Number.</span>
+        </div>
+      </div>
+
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">Status</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="status"/>
+        <div class="valid-feedback" *ngIf="Form.controls['status'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="
+          Form.controls['status'].invalid &&
+          Form.controls['status'].touched
+          ">
+          <span *ngIf="Form.controls['status'].hasError('required')">Please provide a enter Phone Number.</span>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">Quantity</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="quantity"/>
+        <div class="valid-feedback" *ngIf="Form.controls['quantity'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="
+          Form.controls['quantity'].invalid && Form.controls['quantity'].touched
+          ">
+          <span *ngIf="Form.controls['quantity'].hasError('required')">Please provide a enter Quantity.</span>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="validationCustom02" class="form-label">Price</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="price"/>
+        <div class="valid-feedback" *ngIf="Form.controls['price'].valid">
+          Looks good!
+        </div>
+        <div class="invalid-feedback" *ngIf="Form.controls['price'].invalid && Form.controls['price'].touched">
+          <span *ngIf="Form.controls['price'].hasError('required')">Please provide a enter Price.</span>
+        </div>
+      </div>
+
+      <div>
+        <label for="validationCustom02" class="form-label">Upload product Image</label>
+        <input class="form-control"  type="file" #imageUrl (change)="upload(imageUrl.files)">
+      </div>
+
+      <div>
+        <button class="btn btn-primary" type="submit" [disabled]="">Add</button>
+      </div>
+
+  </form>
+</div>

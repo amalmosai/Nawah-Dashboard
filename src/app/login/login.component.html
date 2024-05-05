@@ -1,0 +1,14 @@
+<div class='bold-line'></div>
+  <div class='container'>
+    <div class='window'>
+      <div class='overlay'></div>
+      <form class='content'  [formGroup]="form" (ngSubmit)="login()">
+        <div class='welcome'>Hello!</div>
+          <div class='input-fields'>
+            <input type='email' placeholder='Email' class='input-line full-width' formControlName="email">
+            <input type='password' placeholder='Password' class='input-line full-width' formControlName="password">
+          </div>
+          <div><button type="submit" class='ghost-round full-width'>Login</button></div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,121 @@
+<div class="grid grid-cols-12 gap-6 mt-5">
+  <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
+    <button class="btn btn-primary shadow-md mr-2" routerLink="/addeng">Add New Engineer</button>
+    <div class="dropdown">
+      <button class="dropdown-toggle btn px-2 box" aria-expanded="false" data-tw-toggle="dropdown">
+        <span class="w-5 h-5 flex items-center justify-center">
+          <i class="fa-solid fa-plus fa-xl"></i>
+        </span>
+      </button>
+      <div class="dropdown-menu w-40">
+        <ul class="dropdown-content">
+          <li>
+            <a href="" class="dropdown-item">
+              <i data-lucide="printer" class="w-4 h-4 mr-2"></i> Print
+            </a>
+          </li>
+          <li>
+            <a href="" class="dropdown-item">
+              <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Export to Excel
+            </a>
+          </li>
+          <li>
+            <a href="" class="dropdown-item">
+              <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Export to PDF
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="hidden md:block mx-auto text-slate-500">Showing 1 to 5 of 150 entries</div>
+    <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
+      <div class="w-56 relative text-slate-500">
+        <input type="text" class="form-control w-56 box pr-10" placeholder="Search...">
+        <i class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0" data-lucide="search"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+    <table class="table table-report -mt-2">
+      <thead>
+        <tr>
+          <th class="whitespace-nowrap">IMAGES</th>
+          <th class="whitespace-nowrap">USERNAME</th>
+          <th class="whitespace-nowrap">EMAIL</th>
+          <th class="whitespace-nowrap">ADDRESS</th>
+          <th class="whitespace-nowrap">PHONE</th>
+          <th class="text-center whitespace-nowrap">ADD FARMER</th>
+          <th class="text-center whitespace-nowrap">ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="intro-x"*ngFor="let item of POST | paginate: { itemsPerPage: 5, currentPage: page }">
+          <td class="w-40">
+            <div class="flex">
+              <div class="w-10 h-10 image-fit zoom-in" >
+                <img alt="Midone - HTML Admin Template" class=" rounded-full"
+                  src="http://localhost:3001/uploads/{{item.img}}" title="Uploaded at 2 November 2021">
+              </div>
+            </div>
+          </td>
+          <td >
+            <a href="" class="font-medium whitespace-nowrap">{{item.fname}}</a>
+            <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">{{item.lname}}</div>
+          </td>
+          <td>
+            <a class="text-slate-500 flex items-center mr-3" href="javascript:;">
+              <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+              {{item.email}}
+            </a>
+          </td>
+          <td>
+            <a class="text-slate-500 flex items-center mr-3" href="javascript:;">
+              <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+              {{item.address}}
+            </a>
+          </td>
+          <td>
+            <a class="text-slate-500 flex items-center mr-3" href="javascript:;">
+              <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+              {{item.phone}}
+            </a>
+          </td>
+          <td class="w-40">
+            <div class="flex items-center justify-center text-success">
+              <a class="flex items-center mr-2 mt-4" routerLink="/add-farmer-to-engineer/{{item._id}}">
+                <i class="fa-solid fa-plus fa-xl mr-1" routerLink="/add-farmer-to-engineer/{{item._id}}"></i>
+              </a>
+            </div>
+          </td>
+          <td class="table-report__action w-56">
+            <div class="flexxx justify-center items-center">
+              <a class="flex items-center mr-3" routerLink="/edit-eng/{{item._id}}">
+                <i class="fa-solid fa-pen-to-square fa-xl mr-1" routerLink="/edit-eng/{{item._id}}"></i> Edit
+              </a>
+              <button>
+                <a class="flex items-center text-danger" (click)="del(item._id)">
+                  <i class="fa-solid fa-trash-can fa-xl mr-1" (click)="del(item._id)"></i> Delete
+                </a>
+              </button>
+            </div>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center mt-5">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+
+
+</div>
+
