@@ -7,10 +7,10 @@ import { API } from '../api';
 })
 export class MessageService {
   constructor(private http : HttpClient) { }
-  OrignaPath ="http://localhost:3001/";
+  OrignaPath ="http://localhost:3001/api/v2/contactMessg";
 
   getAllMessages(){
-    return this.http.get<API>(this.OrignaPath+'contactMessg/allMessages');
+    return this.http.get<API>(this.OrignaPath+'/');
   }
 
 }

@@ -26,7 +26,7 @@ export class AddFarmarComponent {
       cropamount: ['1'],
       croptype: ['date'],
       farmingExperience: ['1'],
-      img: ['http://localhost:5000/default.png'],
+      img: ['avatar.jfif'],
     })
   }
 

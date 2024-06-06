@@ -24,29 +24,29 @@ export class UsersService {
     });
     return headers;
   };
-  
-  OrignaPath ="http://localhost:3001/";
+
+  OrignaPath ="http://localhost:3001/api/v2/user";
 
   getAll(){
-    return this.http.get<API>(this.OrignaPath+'user/allusers');
+    return this.http.get<API>(this.OrignaPath+'/');
   }
 
   getByID(id :string){
-    return this.http.get<API>(this.OrignaPath+"user/"+id);
+    return this.http.get<API>(this.OrignaPath+"/"+id);
   }
 
   add(data:FormData){
     const headers = this.getRequestHeaders();
-    return this.http.post<API>(this.OrignaPath+'user/add',data,{ headers: headers });
+    return this.http.post<API>(this.OrignaPath+'/',data,{ headers: headers });
   }
 
   delete(id :string){
     const headers = this.getRequestHeaders();
-    return this.http.delete<API>(this.OrignaPath+"user/delete/"+id,{ headers: headers });
+    return this.http.delete<API>(this.OrignaPath+"/"+id,{ headers: headers });
   }
 
   edit(data:any,id:string){
     const headers = this.getRequestHeaders();
-    return this.http.put<API>(this.OrignaPath+'user/update/'+id ,data ,{ headers: headers });
+    return this.http.put<API>(this.OrignaPath+`/${id}`,data ,{ headers: headers });
   }
 }

@@ -22,7 +22,7 @@ export class AddEngineerComponent {
       phone: ['012'],
       address: ['Aswan'],
       license: [''],
-      img:['http://localhost:5000/default.png',]
+      img:['avatar.jfif']
     })
   }
 

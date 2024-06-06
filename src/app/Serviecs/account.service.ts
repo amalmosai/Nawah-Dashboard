@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AccountService {
 
-  OrignaPath ="http://localhost:3001/"
+  OrignaPath ="http://localhost:3001/api/v2/"
   StoredUserSub:BehaviorSubject<StoredUser>
   constructor(private http:HttpClient) {
     this.StoredUserSub = new BehaviorSubject<StoredUser>(this.getuser())

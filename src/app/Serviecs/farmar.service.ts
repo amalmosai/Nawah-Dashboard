@@ -25,29 +25,29 @@ export class FarmarService {
     return headers;
   };
 
-  OrignaPath ="http://localhost:3001/";
+  OrignaPath ="http://localhost:3001/api/v2/farmer";
 
 
   getFarmer(){
-    return this.http.get<API>(this.OrignaPath+'farmer/allFarmers');
+    return this.http.get<API>(this.OrignaPath+'/');
   }
 
   getByID(id :string){
-    return this.http.get<API>(this.OrignaPath+"farmer/"+id);
+    return this.http.get<API>(this.OrignaPath+"/"+id);
   };
 
   add(data:FormData){
     const headers = this.getRequestHeaders();
-    return this.http.post<API>(this.OrignaPath+'farmer/add',data,{headers: headers })
+    return this.http.post<API>(this.OrignaPath+'/',data,{headers: headers })
   };
 
   edit(data:any,id:string){
     const headers = this.getRequestHeaders();
-    return this.http.put<API>(this.OrignaPath+'farmer/update/'+id , data ,{headers: headers })
+    return this.http.put<API>(this.OrignaPath+'/'+id , data ,{headers: headers })
   };
 
   delete(id :string){
     const headers = this.getRequestHeaders();
-    return this.http.delete<API>(this.OrignaPath+"farmer/delete/"+id,{headers: headers });
+    return this.http.delete<API>(this.OrignaPath+"/"+id,{headers: headers });
   };
 }

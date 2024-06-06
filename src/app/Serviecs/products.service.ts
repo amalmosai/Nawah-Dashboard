@@ -24,28 +24,28 @@ export class ProductsService {
     return headers;
   };
 
-  OrignaPath ="http://localhost:3001/"
+  OrignaPath ="http://localhost:3001/api/v2/product"
 
   getAll(){
-    return this.http.get<API>(this.OrignaPath+'product/allPrds');
+    return this.http.get<API>(this.OrignaPath+'/');
   }
 
   getByID(id :string){
-    return this.http.get<API>(this.OrignaPath+"product/"+id);
+    return this.http.get<API>(this.OrignaPath+"/"+id);
   }
 
   add(data:FormData){
     const headers = this.getRequestHeaders();
-    return this.http.post<API>(this.OrignaPath+'product/add',data,{ headers: headers })
+    return this.http.post<API>(this.OrignaPath+'/',data,{ headers: headers })
   }
 
   delete(id :string){
     const headers = this.getRequestHeaders();
-    return this.http.delete<API>(this.OrignaPath+"product/delete/"+id,{ headers: headers });
+    return this.http.delete<API>(this.OrignaPath+"/"+id,{ headers: headers });
   }
 
   edit(data:FormData,id:string){
     const headers = this.getRequestHeaders();
-    return this.http.put<API>(this.OrignaPath+`product/${id}`, data,{ headers: headers })
+    return this.http.put<API>(this.OrignaPath+`/${id}`, data,{ headers: headers })
   }
 }
