@@ -9,7 +9,7 @@
               'is-invalid': MyForm.controls['fname'].invalid && MyForm.controls['fname'].touched,
           }" />
         <div class="invalid-feedback" *ngIf="MyForm.controls['fname'].invalid && MyForm.controls['fname'].touched">
-          <span *ngIf="MyForm.controls['fname'].hasError('required')">Please provide a enter User name.</span>
+          <span *ngIf="MyForm.controls['fname'].hasError('required')">Please provide a enter first name.</span>
         </div>
         <div class="valid-feedback" *ngIf="MyForm.controls['fname'].valid">
           Looks good!
@@ -22,7 +22,7 @@
               'is-invalid': MyForm.controls['lname'].invalid && MyForm.controls['lname'].touched,
           }" />
         <div class="invalid-feedback" *ngIf="MyForm.controls['lname'].invalid && MyForm.controls['lname'].touched">
-          <span *ngIf="MyForm.controls['lname'].hasError('required')">Please provide a enter User name.</span>
+          <span *ngIf="MyForm.controls['lname'].hasError('required')">Please provide a enter last name.</span>
         </div>
         <div class="valid-feedback" *ngIf="MyForm.controls['lname'].valid">
           Looks good!
@@ -42,14 +42,14 @@
           MyForm.controls['email'].invalid &&
           MyForm.controls['email'].touched
           ">
-          <span *ngIf="MyForm.controls['email'].hasError('required')">Please provide a enter Phone Number.</span>
+          <span *ngIf="MyForm.controls['email'].hasError('required')">Please provide a enter Email.</span>
         </div>
       </div>
 
 
       <div class="col-12">
         <label for="validationCustom02" class="form-label">Password</label>
-        <input type="password" class="form-control" id="validationCustom02" formControlName="password" [ngClass]="{
+        <input type="password" class="form-control" id="validationCustom02" placeholder="password"  formControlName="password" [ngClass]="{
               'is-valid': MyForm.controls['password'].valid && MyForm.controls['password'].touched,
               'is-invalid': MyForm.controls['password'].invalid && MyForm.controls['password'].touched,
           }" />
@@ -60,7 +60,7 @@
           MyForm.controls['password'].invalid &&
           MyForm.controls['password'].touched
           ">
-          <span *ngIf="MyForm.controls['password'].hasError('required')">Please provide a enter Phone Number.</span>
+          <span *ngIf="MyForm.controls['password'].hasError('required')">Please provide a enter password.</span>
         </div>
       </div>
 
@@ -94,7 +94,7 @@
         <div class="invalid-feedback" *ngIf="
           MyForm.controls['address'].invalid && MyForm.controls['address'].touched
           ">
-          <span *ngIf="MyForm.controls['address'].hasError('required')">Please provide a enter Quantity.</span>
+          <span *ngIf="MyForm.controls['address'].hasError('required')">Please provide a enter  Address.</span>
         </div>
       </div>
 

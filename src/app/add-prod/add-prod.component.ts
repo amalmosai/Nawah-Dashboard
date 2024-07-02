@@ -20,7 +20,7 @@ export class AddProdComponent {
       price: [''],
       category: ['dates'],
       status: ['available'],
-      imageUrl:['http://localhost:5000/default.png']
+      imageUrl:['']
     })
   }
   upload(data:any){

@@ -54,8 +54,6 @@ export class EditUserComponent {
       password: [this.oldUsers.password, [Validators.required]],
       phone: [this.oldUsers.phone, [Validators.required]],
       address: [this.oldUsers.address],
-      // totalPrice: [this.oldUsers.totalPrice],
-      // imageUrl: [this.oldUsers.imageUrl, [Validators.required]],
     })
   }
 

@@ -48,7 +48,6 @@ export class EditEngineerComponent {
       phone: [this.oldUsers.phone, [Validators.required]],
       address: [this.oldUsers.address],
       license: [this.oldUsers.license],
-      // imageUrl: [this.oldUsers.imageUrl, [Validators.required]],
     })
   }
 
